@@ -40,6 +40,7 @@ def read_pzem_data():
         # Print alarm statuses
         print(f"High Voltage Alarm: {'Alarm' if high_voltage_alarm == 0xFFFF else 'Clear'}")
         print(f"Low Voltage Alarm: {'Alarm' if low_voltage_alarm == 0xFFFF else 'Clear'}")
+        print("-------------------------------------------------------------------------")
         
     except minimalmodbus.IllegalRequestError as e:
         print(f"Error: {e}")
