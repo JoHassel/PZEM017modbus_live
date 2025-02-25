@@ -49,4 +49,10 @@ def read_pzem_data():
         instrument.serial.close()
 
 if __name__ == "__main__":
-    read_pzem_data()
+    while True:
+        try:
+            read_pzem_data()
+            time.sleep(1)  # wait for 1 second
+        except KeyboardInterrupt:
+            print("Interrupted, exiting...")
+            break
