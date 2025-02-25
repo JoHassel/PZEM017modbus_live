@@ -108,7 +108,7 @@ if __name__ == "__main__":
     data = []
     while True:
         try:
-            data.append(read_pzem_data)()
+            data.append(read_pzem_data)
             time.sleep(1)  # wait for 1 second
         except KeyboardInterrupt:
             save_results(data)
