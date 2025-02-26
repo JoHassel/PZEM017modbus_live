@@ -21,14 +21,14 @@ def read_pzem_data() -> list[float]:
     
     try:
         # Read measurement data
-        voltage = instrument.read_register(0x0000, number_of_decimals=2, functioncode=4)
-        current = instrument.read_register(0x0001, number_of_decimals=2, functioncode=4)
+        voltage = format(instrument.read_register(0x0000, number_of_decimals=2, functioncode=4), ".3f")
+        current = format(instrument.read_register(0x0001, number_of_decimals=2, functioncode=4), ".3f")
         power_low = instrument.read_register(0x0002, functioncode=4)
         power_high = instrument.read_register(0x0003, functioncode=4)
-        power = (power_high << 16) + power_low
+        power = format((power_high << 16) + power_low,".3f")
         energy_low = instrument.read_register(0x0004, functioncode=4)
         energy_high = instrument.read_register(0x0005, functioncode=4)
-        energy = (energy_high << 16) + energy_low
+        energy = format((energy_high << 16) + energy_low, ".3f")
         
         # Read alarm status
         high_voltage_alarm = instrument.read_register(0x0006, functioncode=4)
