@@ -47,7 +47,7 @@ def read_pzem_data() -> list[float]:
         # Write data into list:
         row_values = list[voltage, current, power*0.1, energy]
         row_time = time.strftime('%Y-%m-%d %H:%M:%S')
-        row_data = [row_time] + row_values  
+        row_data = list[row_time] + row_values  
       
         # Print alarm statuses
         # print(f"High Voltage Alarm: {'Alarm' if high_voltage_alarm == 0xFFFF else 'Clear'}")
